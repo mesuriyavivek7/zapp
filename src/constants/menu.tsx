@@ -4,6 +4,7 @@ import { PersonDuoToneWhiteIcon } from '@/icons/person'
 import { RocketDuoToneWhiteIcon } from '@/icons/rocket'
 import { SettingDuoToneWhiteIcon } from '@/icons/setting'
 import {v4 as uuid} from 'uuid'
+
 type FieldProps={
     label:string,
     id:string
