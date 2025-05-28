@@ -12203,20 +12203,20 @@ export namespace Prisma {
 
   export type AutomationWhereUniqueInput = Prisma.AtLeast<{
     id?: string
-    userId?: string
     AND?: AutomationWhereInput | AutomationWhereInput[]
     OR?: AutomationWhereInput[]
     NOT?: AutomationWhereInput | AutomationWhereInput[]
     name?: StringFilter<"Automation"> | string
     createdAt?: DateTimeFilter<"Automation"> | Date | string
     active?: BoolFilter<"Automation"> | boolean
+    userId?: UuidNullableFilter<"Automation"> | string | null
     trigger?: TriggerListRelationFilter
     listener?: XOR<ListenerNullableScalarRelationFilter, ListenerWhereInput> | null
     posts?: PostListRelationFilter
     dms?: DmsListRelationFilter
     User?: XOR<UserNullableScalarRelationFilter, UserWhereInput> | null
     keywords?: KeywordListRelationFilter
-  }, "id" | "userId">
+  }, "id">
 
   export type AutomationOrderByWithAggregationInput = {
     id?: SortOrder

@@ -7,6 +7,7 @@ import {
 } from '@clerk/nextjs'
 import { ThemeProvider } from "@/providers/theme-provider";
 import { Toaster } from "sonner";
+import ReactQueryProvider from "@/providers/react-query-provider";
 
 
 const inter = Inter({ 
@@ -59,7 +60,9 @@ export default function RootLayout({
              enableSystem
              disableTransitionOnChange
             >
-              {children}
+              <ReactQueryProvider>
+                  {children}
+              </ReactQueryProvider>
               <Toaster></Toaster>
             </ThemeProvider>
           </body>

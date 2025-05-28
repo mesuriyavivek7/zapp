@@ -5,11 +5,21 @@ import Link from 'next/link'
 import React from 'react'
 import GradientButton from '../gradient-button'
 import { Button } from '@/components/ui/button'
+import { useQueryAutomations } from '@/hooks/user-queries'
 
 type Props = {}
 
 const AutomationList = (props: Props) => {
   const {pathname} = usePath() 
+
+  const {data} = useQueryAutomations()
+
+  console.log('data---->',data)
+  if(data?.status !== 200) {
+    return <div className='h-[70vh] flex justify-between items-center flex-col gap-y-3'>
+      no data found
+    </div>
+  }
 
   return (
     <div className='flex flex-col gap-y-3'>
