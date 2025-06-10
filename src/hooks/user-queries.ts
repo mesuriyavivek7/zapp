@@ -1,9 +1,10 @@
-import { getAllAutomations } from '@/actions/automations'
-import {useQuery} from '@tanstack/react-query'
+import { useQuery } from '@tanstack/react-query';
+import { getAllAutomations } from '@/action/automations';
 
-export const useQueryAutomations = () =>{
-     return useQuery({
-        queryKey:['user-automation'],
-        queryFn: getAllAutomations,
-     })
-}
+export const useQueryAutomations = () => {
+  
+    return useQuery({
+      queryKey: ['get-all-automatios'],
+      queryFn: getAllAutomations
+    });
+};

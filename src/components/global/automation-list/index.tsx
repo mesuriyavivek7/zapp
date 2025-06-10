@@ -1,4 +1,5 @@
 'use client'
+import { useEffect, useState } from 'react'
 import { usePath } from '@/hooks/use-nav'
 import { cn } from '@/lib/utils'
 import Link from 'next/link'
@@ -12,14 +13,11 @@ type Props = {}
 const AutomationList = (props: Props) => {
   const {pathname} = usePath() 
 
-  const {data} = useQueryAutomations()
+  const result = useQueryAutomations();
 
-  console.log('data---->',data)
-  if(data?.status !== 200) {
-    return <div className='h-[70vh] flex justify-between items-center flex-col gap-y-3'>
-      no data found
-    </div>
-  }
+  const {data,isLoading,isError,error} = result
+
+  console.log("error----->",error)
 
   return (
     <div className='flex flex-col gap-y-3'>

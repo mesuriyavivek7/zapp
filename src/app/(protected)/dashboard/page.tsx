@@ -1,4 +1,4 @@
-import { onBoardUser } from '@/actions/user'
+import { onBoardUser } from '@/action/user'
 import { redirect } from 'next/navigation'
 import React from 'react'
 
