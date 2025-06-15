@@ -20,9 +20,9 @@ export const getAllAutomations = async () => {
 
     const automations = await getAutomations(user.id);
 
-    console.log('automations ----->',automations)
-
     if (automations) return automations.automations;
+
+    return []
 
   } catch (error) {
     console.error("Error in getAllAutomations:", error);
